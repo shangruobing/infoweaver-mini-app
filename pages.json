@@ -1,0 +1,55 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			// "path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "织信小程序",
+				"navigationBarBackgroundColor": "#409EFF",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "织信小程序",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/footer/home.png",
+				"selectedIconPath": "static/footer/home.png"
+			},
+			{
+				"pagePath": "pages/test/test",
+				"text": "工作台",
+				"iconPath": "static/footer/function.png",
+				"selectedIconPath": "static/footer/function.png"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "个人中心",
+				"iconPath": "static/footer/me.png",
+				"selectedIconPath": "static/footer/me.png"
+			}
+		]
+	}
+}
