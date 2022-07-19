@@ -1,54 +1,53 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
-			// "path": "pages/test/test",
 			"style": {
-				"navigationBarTitleText": "织信小程序",
-				"navigationBarBackgroundColor": "#409EFF",
-				"navigationBarTextStyle": "white"
+				"navigationBarTitleText": "织信小程序"
 			}
 		},
 		{
 			"path": "pages/mine/mine",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "个人中心",
 				"enablePullDownRefresh": false
 			}
 		},
 		{
 			"path": "pages/test/test",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "我在校园",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#3BB270"
 			}
-
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "织信小程序",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#409EFF",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-		"list": [{
+		"list": [
+			{
 				"pagePath": "pages/index/index",
 				"text": "首页",
-				"iconPath": "static/footer/home.png",
-				"selectedIconPath": "static/footer/home.png"
+				"iconPath": "static/BottomNavigationBar/home.png",
+				"selectedIconPath": "static/BottomNavigationBar/home.png"
 			},
 			{
 				"pagePath": "pages/test/test",
 				"text": "工作台",
-				"iconPath": "static/footer/function.png",
-				"selectedIconPath": "static/footer/function.png"
+				"iconPath": "static/BottomNavigationBar/function.png",
+				"selectedIconPath": "static/BottomNavigationBar/function.png"
 			},
 			{
 				"pagePath": "pages/mine/mine",
 				"text": "个人中心",
-				"iconPath": "static/footer/me.png",
-				"selectedIconPath": "static/footer/me.png"
+				"iconPath": "static/BottomNavigationBar/me.png",
+				"selectedIconPath": "static/BottomNavigationBar/me.png"
 			}
 		]
 	}

@@ -1,5 +1,5 @@
 {
-  "name": "NFQA-Mini-Program",
+  "name": "infoweaver-mini-program",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -7,9 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "vue3-beautiful-chat": "^3.2.0"
-  }
+  "author": "Ruobing Shang",
+  "license": "ISC"
 }
