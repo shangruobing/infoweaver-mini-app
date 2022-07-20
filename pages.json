@@ -14,7 +14,7 @@
 			}
 		},
 		{
-			"path": "pages/test/test",
+			"path": "pages/approval/Index",
 			"style": {
 				"navigationBarTitleText": "我在校园",
 				"enablePullDownRefresh": false,
@@ -38,7 +38,7 @@
 				"selectedIconPath": "static/BottomNavigationBar/home.png"
 			},
 			{
-				"pagePath": "pages/test/test",
+				"pagePath": "pages/approval/Index",
 				"text": "工作台",
 				"iconPath": "static/BottomNavigationBar/function.png",
 				"selectedIconPath": "static/BottomNavigationBar/function.png"
