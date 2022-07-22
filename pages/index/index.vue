@@ -1,15 +1,22 @@
 <template>
+  <uni-notice-bar single text="Infoweaver小程序正式开始开发，快去一起体验吧!" show-icon scrollable />
   <view class="content">
     <uni-swiper-dot field="content" class="swiper">
       <swiper class="swiper-box">
         <swiper-item>
-          <view class="swiper-item"><image src="/static/Material/1.svg"></image></view>
+          <view class="swiper-item">
+            <image src="/static/Material/1.svg"></image>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view class="swiper-item"><image src="/static/Material/2.svg"></image></view>
+          <view class="swiper-item">
+            <image src="/static/Material/2.svg"></image>
+          </view>
         </swiper-item>
         <swiper-item>
-          <view class="swiper-item"><image src="/static/Material/3.svg"></image></view>
+          <view class="swiper-item">
+            <image src="/static/Material/3.svg"></image>
+          </view>
         </swiper-item>
       </swiper>
     </uni-swiper-dot>
@@ -22,26 +29,33 @@
       :border="true"
       margin="5"
     >
-      <uni-grid :column="4" :highlight="true" class="grid-box" :showBorder="false" :square="true">
-        <uni-grid-item>
+      <uni-grid
+        :column="4"
+        :highlight="true"
+        class="grid-box"
+        :showBorder="false"
+        :square="true"
+        @change="clickGridItem"
+      >
+        <uni-grid-item index="0">
           <view class="grid-box-item">
             <uni-icons type="star" size="20"></uni-icons>
             <text>关注</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="1">
           <view class="grid-box-item">
             <uni-icons type="calendar" size="20"></uni-icons>
             <text>校历</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="2">
           <view class="grid-box-item">
             <uni-icons type="email" size="20"></uni-icons>
             <text>邮箱</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="3">
           <view class="grid-box-item">
             <uni-icons type="help" size="20"></uni-icons>
             <text>帮助</text>
@@ -106,7 +120,30 @@
   </view>
 </template>
 
-<script lang="ts" setup></script>
+<script setup>
+const clickGridItem = (e) => {
+  console.log(e)
+  let url = ''
+  switch (e.detail.index) {
+    case '0':
+      url = '/pages/help/help'
+      break
+    case '1':
+      url = '/pages/webview/webview'
+      break
+    case '2':
+      url = '/pages/formula/Index'
+      break
+    case '3':
+      url = '/pages/introducation/introducation'
+    default:
+      break
+  }
+  uni.navigateTo({
+    url: url
+  })
+}
+</script>
 
 <style lang="scss">
 .content {
