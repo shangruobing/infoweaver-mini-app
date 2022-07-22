@@ -93,6 +93,7 @@ const sexs = [
 ]
 
 const submit = async () => {
+  // eslint-disable-next-line no-undef
   uni.showToast({
     title: '提交成功啦',
     duration: 2000

@@ -214,20 +214,20 @@
 </style>
 
 <script>
-//import {  } from "@/common/api/{$}.js";
+// import {  } from "@/common/api/{$}.js";
 export default {
   data() {
     return {}
   },
-  //监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad
+  // 监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad
   onInit() {},
-  //监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参）
+  // 监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参）
   onLoad() {},
-  //监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发
+  // 监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发
   onReady() {},
-  //监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面
-  beforeDestroy() {},
-  //页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。
+  // 监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面
+  beforeUnmount() {},
+  // 页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。
   onReachBottom() {},
   onShareAppMessage(res) {},
   created() {},

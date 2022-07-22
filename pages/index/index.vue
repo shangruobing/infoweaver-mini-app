@@ -1,5 +1,10 @@
 <template>
-  <uni-notice-bar single text="Infoweaver小程序正式开始开发，快去一起体验吧!" show-icon scrollable />
+  <uni-notice-bar
+    single
+    text="Infoweaver小程序正式开始开发，快去一起体验吧!"
+    show-icon
+    scrollable
+  />
   <view class="content">
     <uni-swiper-dot field="content" class="swiper">
       <swiper class="swiper-box">
@@ -72,8 +77,15 @@
       :border="true"
       margin="5"
     >
-      <uni-grid :column="4" :highlight="true" class="grid-box" :showBorder="false" :square="true">
-        <uni-grid-item>
+      <uni-grid
+        :column="4"
+        :highlight="true"
+        class="grid-box"
+        :showBorder="false"
+        :square="true"
+        @change="clickGridItem"
+      >
+        <uni-grid-item index="4">
           <view class="grid-box-item">
             <uni-icons type="chatbubble" size="20"></uni-icons>
             <text>问答</text>
@@ -122,7 +134,6 @@
 
 <script setup>
 const clickGridItem = (e) => {
-  console.log(e)
   let url = ''
   switch (e.detail.index) {
     case '0':
@@ -136,9 +147,14 @@ const clickGridItem = (e) => {
       break
     case '3':
       url = '/pages/introducation/introducation'
+      break
+    case '4':
+      url = '/pages/serviceInfo/serviceInfo'
+      break
     default:
       break
   }
+  // eslint-disable-next-line no-undef
   uni.navigateTo({
     url: url
   })

@@ -71,7 +71,7 @@ export default {
       console.log(e.detail.index)
       this.selectedIndexs = e.detail.index
     },
-    //批量删除
+    // 批量删除
     delTable() {
       console.log(this.selectedItems())
     },
@@ -131,11 +131,6 @@ export default {
 }
 </script>
 <style>
-/* #ifndef H5 */
-/* page {
-	padding-top: 85px;
-} */
-/* #endif */
 .uni-group {
   display: flex;
   align-items: center;
