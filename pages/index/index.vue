@@ -91,13 +91,13 @@
             <text>问答</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="5">
           <view class="grid-box-item">
             <uni-icons type="upload" size="20"></uni-icons>
             <text>上传</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="6">
           <view class="grid-box-item">
             <uni-icons type="notification" size="20"></uni-icons>
             <text>消息</text>
@@ -150,6 +150,12 @@ const clickGridItem = (e) => {
       break
     case '4':
       url = '/pages/serviceInfo/serviceInfo'
+      break
+    case '5':
+      url = '/pages/list/list'
+      break
+    case '6':
+      url = '/pages/indexList/indexList'
       break
     default:
       break

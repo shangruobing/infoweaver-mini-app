@@ -2,8 +2,19 @@
   <view>
     <uni-card :is-shadow="false" is-full class="title">
       <text>{{ ServiceURL }}</text>
+      <text>服务器运行状况🐱‍💻</text>
     </uni-card>
-    <text>服务器信息是{{ serviceInfo }}</text>
+
+    <uni-table border stripe emptyText="暂无更多数据">
+      <uni-tr>
+        <uni-th align="center">名称</uni-th>
+        <uni-th align="center">参数</uni-th>
+      </uni-tr>
+      <uni-tr v-for="(value, name, index) in serviceInfo" :key="index">
+        <uni-td>{{ name.toUpperCase() }}</uni-td>
+        <uni-td>{{ value }}</uni-td>
+      </uni-tr>
+    </uni-table>
   </view>
 </template>
 
@@ -20,7 +31,6 @@ const request = async () => {
       url: 'https://www.infoweaver.cloud/api/sysinfo/'
     })
     serviceInfo.value = res.data
-    console.log(res)
   } catch (err) {
     console.error(err)
   }
@@ -35,6 +45,7 @@ onMounted(() => {
 .title {
   text-align: center;
   text {
+    display: inline-block;
     font-weight: bold;
     font-size: large;
   }
