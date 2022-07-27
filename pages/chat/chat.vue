@@ -1,8 +1,7 @@
 <template>
   <view>
     <uni-card :is-shadow="false" is-full class="title">
-      <text>{{ ServiceURL }}</text>
-      <text>服务器运行状况🐱‍💻</text>
+      <text>当前设备状况📱</text>
     </uni-card>
 
     <uni-table border stripe emptyText="暂无更多数据">
@@ -19,32 +18,15 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import { ServiceURL } from '@/utils/utils'
+import { ref } from 'vue'
 
-const serviceInfo = ref()
-
-const request = async () => {
-  try {
-    const res = await uni.request({
-      url: 'https://www.infoweaver.cloud/api/sysinfo/'
-    })
-    serviceInfo.value = res.data
-  } catch (err) {
-    console.error(err)
-  }
-}
-
-onMounted(() => {
-  request()
-})
+const serviceInfo = ref(uni.getDeviceInfo())
 </script>
 
 <style lang="scss" scoped>
 .title {
   text-align: center;
   text {
-    display: inline-block;
     font-weight: bold;
     font-size: large;
   }

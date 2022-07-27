@@ -14,7 +14,6 @@
   </view>
 </template>
 
-<!-- eslint-disable no-undef -->
 <script setup>
 const copyUrl = (url) => {
   uni.showModal({

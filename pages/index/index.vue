@@ -114,14 +114,21 @@
       :border="true"
       margin="5"
     >
-      <uni-grid :column="4" :highlight="true" class="grid-box" :showBorder="false" :square="true">
-        <uni-grid-item>
+      <uni-grid
+        :column="4"
+        :highlight="true"
+        class="grid-box"
+        :showBorder="false"
+        :square="true"
+        @change="clickGridItem"
+      >
+        <uni-grid-item index="7">
           <view class="grid-box-item">
             <uni-icons type="scan" size="20"></uni-icons>
             <text>识别</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item>
+        <uni-grid-item index="8">
           <view class="grid-box-item">
             <uni-icons type="chat" size="20"></uni-icons>
             <text>聊天</text>
@@ -157,10 +164,15 @@ const clickGridItem = (e) => {
     case '6':
       url = '/pages/indexList/indexList'
       break
+    case '7':
+      url = '/pages/chat/chat'
+      break
+    case '8':
+      url = '/pages/test/test'
+      break
     default:
       break
   }
-  // eslint-disable-next-line no-undef
   uni.navigateTo({
     url: url
   })

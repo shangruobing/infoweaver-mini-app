@@ -14,5 +14,8 @@ module.exports = {
     // 'vue/no-multiple-template-root': 0,
     'object-shorthand': 0,
     'space-before-function-paren': 0
+  },
+  globals: {
+    uni: true
   }
 }
