@@ -1,1 +1,21 @@
-{}
+{
+    "cSpell.enableFiletypes": [
+        "!csharp",
+        "!elixir",
+        "!go",
+        "!graphql",
+        "!handlebars",
+        "!haskell",
+        "!jade",
+        "!javascriptreact",
+        "!less",
+        "!php",
+        "!pug",
+        "!rust",
+        "!scala",
+        "!scminput",
+        "!swift",
+        "!typescriptreact",
+        "ignore"
+    ]
+}
