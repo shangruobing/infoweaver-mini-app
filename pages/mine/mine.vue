@@ -70,32 +70,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const nickName = ref('微信用户')
 const avatarUrl = ref(
   'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 )
 
-const login = () => {
-  uni.getUserProfile({
-    desc: '用于头像昵称展示',
-    success: (res) => {
-      console.log(res)
-      nickName.value = res.userInfo.nickName
-      avatarUrl.value = res.userInfo.avatarUrl
-      // uni.setStorageSync(KEY_AVATARNAME, res.userInfo)
-    },
-    fail: (error) => {
-      console.log(error)
-    }
-  })
+onMounted(() => {
+  const userInfo = uni.getStorageSync('USER_INFO')
+  if (userInfo) {
+    nickName.value = userInfo.nickName
+    avatarUrl.value = userInfo.avatarUrl
+  }
+})
+
+const login = async () => {
+  uni.showLoading({ title: '加载请求中' })
+
+  setTimeout(() => uni.hideLoading(), 1000)
+
+  try {
+    const res = await uni.getUserProfile({ desc: '用于头像昵称展示' })
+    nickName.value = res.userInfo.nickName
+    avatarUrl.value = res.userInfo.avatarUrl
+    uni.setStorageSync('USER_INFO', res.userInfo)
+    uni.showToast({ title: '登录成功', duration: 1000 })
+  } catch (error) {
+    uni.showToast({ title: '登录失败', duration: 1000 })
+    console.log(error)
+  }
 }
 
-const logout = () => {
-  nickName.value = '微信用户'
-  avatarUrl.value =
-    'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const logout = async () => {
+  const res = await uni.showModal({ title: '确定退出登录?' })
+  if (res.confirm) {
+    nickName.value = '微信用户'
+    avatarUrl.value =
+      'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+    uni.removeStorageSync('USER_INFO')
+    uni.showToast({ title: '退出登录成功', duration: 1000 })
+  }
 }
 </script>
 
@@ -107,7 +122,7 @@ $background-color: #409eff;
   position: relative;
 
   .background {
-    background-color: #409eff;
+    background-color: $background-color;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
     position: absolute;
@@ -228,7 +243,7 @@ $background-color: #409eff;
   margin-top: 50px;
 
   .btn {
-    background-color: #409eff;
+    background-color: $background-color;
     border-radius: 30px;
     width: 80%;
     color: white;

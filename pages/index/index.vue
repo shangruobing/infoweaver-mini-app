@@ -7,7 +7,7 @@
   />
   <view class="content">
     <uni-swiper-dot field="content" class="swiper">
-      <swiper class="swiper-box">
+      <swiper class="swiper-box" autoplay="true" interval="5000" circular="true">
         <swiper-item>
           <view class="swiper-item">
             <image src="/static/Material/1.svg"></image>
@@ -42,25 +42,25 @@
         :square="true"
         @change="clickGridItem"
       >
-        <uni-grid-item index="0">
+        <uni-grid-item :index="0">
           <view class="grid-box-item">
             <uni-icons type="star" size="20"></uni-icons>
             <text>关注</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="1">
+        <uni-grid-item :index="1">
           <view class="grid-box-item">
             <uni-icons type="calendar" size="20"></uni-icons>
             <text>校历</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="2">
+        <uni-grid-item :index="2">
           <view class="grid-box-item">
             <uni-icons type="email" size="20"></uni-icons>
             <text>邮箱</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="3">
+        <uni-grid-item :index="3">
           <view class="grid-box-item">
             <uni-icons type="help" size="20"></uni-icons>
             <text>帮助</text>
@@ -85,19 +85,19 @@
         :square="true"
         @change="clickGridItem"
       >
-        <uni-grid-item index="4">
+        <uni-grid-item :index="4">
           <view class="grid-box-item">
             <uni-icons type="chatbubble" size="20"></uni-icons>
             <text>问答</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="5">
+        <uni-grid-item :index="5">
           <view class="grid-box-item">
             <uni-icons type="upload" size="20"></uni-icons>
             <text>上传</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="6">
+        <uni-grid-item :index="6">
           <view class="grid-box-item">
             <uni-icons type="notification" size="20"></uni-icons>
             <text>消息</text>
@@ -122,13 +122,13 @@
         :square="true"
         @change="clickGridItem"
       >
-        <uni-grid-item index="7">
+        <uni-grid-item :index="7">
           <view class="grid-box-item">
             <uni-icons type="scan" size="20"></uni-icons>
             <text>识别</text>
           </view>
         </uni-grid-item>
-        <uni-grid-item index="8">
+        <uni-grid-item :index="8">
           <view class="grid-box-item">
             <uni-icons type="chat" size="20"></uni-icons>
             <text>聊天</text>
@@ -143,31 +143,31 @@
 const clickGridItem = (e) => {
   let url = ''
   switch (e.detail.index) {
-    case '0':
+    case 0:
       url = '/pages/help/help'
       break
-    case '1':
+    case 1:
       url = '/pages/webview/webview'
       break
-    case '2':
+    case 2:
       url = '/pages/formula/Index'
       break
-    case '3':
+    case 3:
       url = '/pages/introducation/introducation'
       break
-    case '4':
+    case 4:
       url = '/pages/serviceInfo/serviceInfo'
       break
-    case '5':
+    case 5:
       url = '/pages/list/list'
       break
-    case '6':
+    case 6:
       url = '/pages/indexList/indexList'
       break
-    case '7':
+    case 7:
       url = '/pages/chat/chat'
       break
-    case '8':
+    case 8:
       url = '/pages/test/test'
       break
     default:

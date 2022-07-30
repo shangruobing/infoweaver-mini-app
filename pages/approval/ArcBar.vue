@@ -1,5 +1,10 @@
 <template>
-  <qiun-data-charts type="arcbar" :opts="opts" :chartData="chartData" />
+  <qiun-data-charts
+    type="arcbar"
+    :opts="opts"
+    :chartData="chartData"
+    :canvas2d="true"
+  />
 </template>
 
 <script setup>
