@@ -4,6 +4,7 @@
     text="Infoweaver小程序正式开始开发，快去一起体验吧!"
     show-icon
     scrollable
+    show-close
   />
   <view class="content">
     <uni-swiper-dot field="content" class="swiper">

@@ -40,37 +40,12 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-:deep(.uni-card) {
-  display: block;
-  position: relative;
-  height: 160px !important;
-  width: 350px;
-  border-radius: 20px !important;
-  padding: 0 !important;
-  border: none !important;
-  margin: 0, auto;
-}
-
 .charts-box {
   position: absolute;
   top: 20px;
   right: 20px;
   width: 100px;
   height: 100px !important;
-}
-
-:deep(.uni-card__header) {
-  border: none !important;
-  font-weight: 600;
-
-  text {
-    padding-top: 10px;
-    padding-left: 10px;
-  }
-}
-
-:deep(.uni-card__content) {
-  padding-top: 0px !important;
 }
 
 .card-actions-item {

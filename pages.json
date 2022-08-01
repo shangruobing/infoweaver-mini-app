@@ -90,7 +90,7 @@
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "织信小程序",
+		"navigationBarTitleText": "织信校园",
 		"navigationBarBackgroundColor": "#409EFF",
 		"backgroundColor": "#F8F8F8"
 	},
