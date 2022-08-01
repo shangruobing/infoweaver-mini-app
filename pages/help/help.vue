@@ -1,5 +1,5 @@
 <template>
-  <view class="container">
+  <view>
     <uni-card :is-shadow="false" is-full class="title">
       <text>填写您的信息注册成为我们的会员🎉 </text>
     </uni-card>

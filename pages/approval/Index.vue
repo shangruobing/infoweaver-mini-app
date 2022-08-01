@@ -7,7 +7,7 @@
       提交请假
     </button>
   </view>
-  <view class="content">
+  <view class="content" v-if="tabButton === 0">
     <Card
       title="看电影"
       type="事假"
@@ -23,10 +23,14 @@
       action="noPass"
     />
   </view>
+  <view class="content" v-else>
+    <HolidayForm />
+  </view>
 </template>
 
 <script setup>
 import Card from './Card.vue'
+import HolidayForm from './HolidayForm.vue'
 import { ref } from 'vue'
 
 const tabButton = ref(0)
@@ -36,31 +40,6 @@ const changeTab = (value) => {
 </script>
 
 <style lang="scss" scoped>
-:deep(.uni-card) {
-  display: block;
-  position: relative;
-  height: 160px !important;
-  width: 350px !important;
-  border-radius: 20px !important;
-  padding: 0 !important;
-  border: none !important;
-  margin: 0, auto;
-}
-
-:deep(.uni-card__header) {
-  border: none !important;
-  font-weight: 600;
-
-  text {
-    padding-top: 10px;
-    padding-left: 10px;
-  }
-}
-
-:deep(.uni-card__content) {
-  padding-top: 0px !important;
-}
-
 .tab-group {
   display: flex;
   align-items: center;
@@ -96,5 +75,30 @@ const changeTab = (value) => {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+:deep(.uni-card) {
+  display: block;
+  position: relative;
+  height: 160px !important;
+  width: 350px !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  border: none !important;
+  margin: 0, auto;
+}
+
+:deep(.uni-card__header) {
+  border: none !important;
+  font-weight: 600;
+
+  text {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+}
+
+:deep(.uni-card__content) {
+  padding-top: 0px !important;
 }
 </style>

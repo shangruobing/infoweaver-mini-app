@@ -97,7 +97,6 @@ const login = async () => {
     uni.setStorageSync('USER_INFO', res.userInfo)
     uni.showToast({ title: '登录成功', duration: 1000 })
   } catch (error) {
-    uni.showToast({ title: '登录失败', duration: 1000 })
     console.log(error)
   }
 }
