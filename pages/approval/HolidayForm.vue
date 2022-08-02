@@ -9,8 +9,8 @@
 
     <picker mode="selector" :range="isleaveType" @change="isLeaveSchoolChange">
       <view class="content">
-        <view class="left-label">请假类型</view>
-        <view class="right-label"> {{ isleaveType[index] }}</view>
+        <view class="left-label">是否离校</view>
+        <view class="right-label"> {{ isleaveType[isLeaveSchool] }}</view>
       </view>
     </picker>
 
@@ -59,7 +59,6 @@
       <uni-easyinput
         type="textarea"
         v-model="value"
-        autoHeight
         placeholder="请详细填写请假事由"
         :inputBorder="false"
         placeholder-style="font-size: 1rem; z-index:1"
@@ -72,6 +71,7 @@
         <view class="right-label">0/9 </view>
       </view>
       <view style="margin-left: 20px; margin-top: 5px">
+        <!-- <uni-file-picker limit="9" :image-styles="imageStyles" title="请详细填写请假事由"/> -->
         <uni-file-picker limit="9" :image-styles="imageStyles" />
       </view>
     </view>
@@ -92,6 +92,7 @@ const isLeaveSchool = ref(0)
 const isleaveType = ['否', '是']
 const isLeaveSchoolChange = (e) => {
   isLeaveSchool.value = e.detail.value
+  console.log(isleaveType[isLeaveSchool.value])
 }
 
 const startDatetime = ref(Date.now())
@@ -118,25 +119,29 @@ const placeChange = (e) => {
 }
 
 const imageStyles = {
-  height: 60,
-  width: 90
+  height: 80,
+  width: 100
 }
 </script>
 <style lang="scss" scoped>
+$item-height: 80rpx;
+$item-margin: 10rpx 20rpx 0rpx 20rpx;
+
 .containter {
   width: 100vw;
+  margin-top: 10rpx;
 }
 
 picker,
 .datetime-picker {
   font-size: 20rpx;
-  height: 90rpx;
+  height: $item-height;
   background-color: white;
   background-size: 32rpx 22rpx;
   border-radius: 30rpx;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.08);
-  margin: 20rpx;
-  line-height: 90rpx;
+  margin: $item-margin;
+  line-height: $item-height;
 }
 
 .content {
@@ -159,24 +164,23 @@ picker,
 
 .text-area {
   font-size: 1rem;
-  height: 260rpx;
+  height: 240rpx;
   background-color: white;
   background-size: 32rpx 22rpx;
   border-radius: 30rpx;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.08);
   margin: 20rpx;
-  line-height: 260rpx;
+  margin-bottom: 0;
+  line-height: 240rpx;
 
   text {
     display: block;
-    height: 20px;
+    height: 40rpx;
     line-height: 20px;
     font-size: 1rem;
     margin-left: 24px;
     padding-top: 5px;
-    margin-bottom: 5px;
   }
-
   :deep(textarea) {
     margin-left: 24px;
     margin-right: 24px;
@@ -188,9 +192,8 @@ picker,
   height: 90rpx;
   line-height: 90rpx;
   color: white;
-  margin: 40rpx;
-  margin-top: 0;
-  margin-bottom: 20rpx;
+  margin: 20rpx;
+  margin-bottom: 0;
   background-color: #1fc8db;
   border-radius: 20rpx;
   background-image: linear-gradient(141deg, #56e9a9 0%, #1ababa);
@@ -198,27 +201,31 @@ picker,
 
 .upload-area {
   font-size: 1rem;
-  height: 200rpx;
+  height: 240rpx;
   background-color: white;
   background-size: 32rpx 22rpx;
   border-radius: 30rpx;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.08);
   margin: 20rpx;
-  line-height: 200rpx;
+  margin-bottom: 0;
+  line-height: 240rpx;
 
   .content {
     display: flex;
-    height: 30px;
+    height: 60rpx;
+    line-height: 60rpx;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
     .left-label {
+      height: 100%;
       font-size: 1rem;
       margin-left: 1.5em;
       font-weight: 500;
     }
     .right-label {
+      height: 100%;
       font-size: 1rem;
       margin-right: 1.5em;
       font-weight: 200;
