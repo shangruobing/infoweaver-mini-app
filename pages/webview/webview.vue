@@ -9,12 +9,13 @@
       font-size="20"
       showUnderLine="false"
     ></uni-link>
-    <!-- <text style="color: #0075F7;">{{ "https://www.infoweaver.cloud" }}</text> -->
     <button type="primary" @click="copyUrl('https://www.infoweaver.cloud')">点击复制URL</button>
   </view>
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
+
 const copyUrl = (url) => {
   uni.showModal({
     content: url,
@@ -40,6 +41,9 @@ const copyUrl = (url) => {
     }
   })
 }
+onMounted(() => {
+  uni.hideTabBar()
+})
 </script>
 
 <style scoped>

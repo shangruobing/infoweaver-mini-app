@@ -1,1 +1,1 @@
-export const ServiceURL: string = 'https://www.infoweaver.cloud/'
+export const ServiceURL = 'https://www.infoweaver.cloud/'
