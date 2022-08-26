@@ -8,7 +8,7 @@
         <uni-title type="h2" title="1 项目介绍"></uni-title>
       </view>
       <view>
-        <uni-title type="h3" title="1.1 什么是执行校园"></uni-title>
+        <uni-title type="h3" title="1.1 什么是织信校园"></uni-title>
       </view>
       <view>
         <text>一款针对校园的问答系统，旨在改善校园生活</text>
@@ -46,6 +46,7 @@
 import { reactive } from 'vue'
 
 const requirement = reactive([
+  { name: 'Pytorch', desc: '神经网络模型' },
   { name: 'Neo4j MySQL', desc: '图/关系型数据库' },
   { name: 'Django Rest FrameWork', desc: '后端' },
   { name: 'Vue.js', desc: 'Web页面' },
